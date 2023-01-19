@@ -7,7 +7,7 @@ export default class Camera{
     this.sizes = this.experience.sizes;
     this.scene = this.experience.scene;
     this.canvas = this.experience.canvas;
-
+    //create two cameras for the scene
     this.createPerspectiveCamera();
     this.createOrthographicCamera();
   }
@@ -28,6 +28,22 @@ export default class Camera{
       100
       );
     this.scene.add(this.orthographicCamera);
+  }
+
+  resize(){
+    //Updating Perspective Camera on Resize
+    this.perspectiveCamera = this.sizes.aspect;
+    this.perspectiveCamera.updateProjectionMatrix()
+    //Updating Orthographic Camera on Resize
+    this,this.orthographicCamera.left = (-this.sizes.aspect * this.sizes.frustrum)/2;
+    this,this.orthographicCamera.right = (this.sizes.aspect * this.sizes.frustrum)/2;
+    this,this.orthographicCamera.top = this.sizes.frustrum/2;
+    this,this.orthographicCamera.bottom = -this.sizes.frustrum/2;
+
+  }
+
+  update(){
+  
   }
   
 }

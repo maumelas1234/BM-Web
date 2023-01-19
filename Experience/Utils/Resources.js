@@ -37,11 +37,13 @@ export default class Resources extends EventEmitter{
 
   startLoading(){
     for(const asset of this.assets){
+      //load glbModel
       if(asset.type === "glbModel"){
         this.loaders.gltfLoader.load(asset.path, (file)=>{
           this.singleAssetLoaded(asset, file)
         })
-      }else if (asset.type === "videoTexture"){
+      }//load video texture
+      else if (asset.type === "videoTexture"){
         this.video = {}
         this.videoTexture = {}
 
@@ -64,13 +66,15 @@ export default class Resources extends EventEmitter{
       }
     }
   }
-
+  //check if all assets are loaded
   singleAssetLoaded(asset, file){
     this.items[asset.name] = file;
     this.loaded++;
-    console.log(file);
+    //assets are loading
     
     if(this.loaded === this.queue){
+      //all assets are done
+      
       this.emit("ready")
     }
   }

@@ -15,6 +15,7 @@ export default class World{
 
     this.resources.on("ready", ()=>{
       //when all loaded - Room will be created
+      this.environment = new Environment();
       this.room = new Room();
     })
   }

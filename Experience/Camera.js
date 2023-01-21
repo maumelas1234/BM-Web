@@ -28,10 +28,10 @@ export default class Camera{
   createOrthographicCamera(){
    
     this.orthographicCamera = new THREE.OrthographicCamera(
-      (-this.sizes.aspect * this.sizes.frustrum)/2,
-      (this.sizes.aspect * this.sizes.frustrum)/2,
-      this.sizes.frustrum/2,
-      -this.sizes.frustrum/2,
+      (-this.sizes.aspect * this.sizes.frustrum)/ 2,
+      (this.sizes.aspect * this.sizes.frustrum)/ 2,
+      this.sizes.frustrum/ 2,
+      -this.sizes.frustrum/ 2,
       -10,
       10
       );
@@ -78,7 +78,7 @@ export default class Camera{
     this.helper.matrixWorldNeedsUpdate = true;
     this.helper.update();
     this.helper.position.copy(this.orthographicCamera.position);
-    this.helper.position.copy(this.orthographicCamera.rotation);
+    this.helper.rotation.copy(this.orthographicCamera.rotation);
   }
   
 }

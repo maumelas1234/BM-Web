@@ -1,25 +1,19 @@
 import * as THREE from "three"
-import GSAP from "gsap"
 import Experience from "../Experience.js"
+import GSAP from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 
 export default class Controls{
   constructor(){
   this.experience = new Experience();
   this.scene = this.experience.scene;
   this.resources = this.experience.resources;
-  this.room = this.resources.items.room;
-  this.actualRoom = this.room.scene;
-  this.time = this.experience.time;
-  this.camera = this.experience.camera
-  //breakpoints
-  this.moveChair = false;
-  this.firstScreen = false;
-  this.secondScreen = false;
-  this.thirdScreen = false;
-  this.shelfs = false;
-  this.lastMove = false;
+  this.room = this.experience.world.room.actualRoom;
+  this.camera = this.experience.camera;
+  this.video =this.resources.video;
 
-  this.progress = 0;
+  GSAP.registerPlugin(ScrollTrigger);
+
   //path start
 
   this.lerp = {
@@ -33,6 +27,7 @@ export default class Controls{
   
   this.setPath();
   this.onWheel();
+  this.setScrollEvents();
   }
   //Camera movement path
   setPath(){
@@ -40,8 +35,8 @@ export default class Controls{
       this.start = new THREE.Vector3( 0, 1, 5 ),
       
       new THREE.Vector3( 0.05641930594255906, 0.9161117992843052, 2.006360491755347 ),
-      new THREE.Vector3( -0.014517055663079707, 1.0293164773669006, 0.7536915231425607 ),
-      new THREE.Vector3( 0.05641930594255906, 0.9161117992843052, 2.006360491755347 ),
+      // new THREE.Vector3( -0.014517055663079707, 1.0293164773669006, 0.7536915231425607 ),
+      // new THREE.Vector3( 0.05641930594255906, 0.9161117992843052, 2.006360491755347 ),
       new THREE.Vector3( -0.6500883576856545, 1.2572904433156957, 0.6092011297529916 ),
       new THREE.Vector3( 0.05641930594255906, 0.9161117992843052, 2.006360491755347 ),
       new THREE.Vector3(  0.6473685475229742, 1.2074805317551132, 0.5473854247308692 ),
@@ -74,29 +69,48 @@ export default class Controls{
       }
     })
   }
-//capture the moment of changing camera
-  onChangePosition(){
-    if(this.lerp.target > 0.07){
-      this.moveChair = true;
-    }else{this.moveChair = false}
-    if(this.lerp.target > 0.28){
-      this.firstScreen = true;
-    }else{this.firstScreen = false}
-    if(this.lerp.target > 0.47){
-      this.secondScreen = true;
-    }else{this.secondScreen = false}
-    if(this.lerp.target > 0.67){
-      this.thirdScreen = true;
-    }else{this.thirdScreen = false}
-    if(this.lerp.target > 0.87){
-      this.shelfs = true;
-    }else{this.shelfs = false}
-    if(this.lerp.target > 0.97){
-      this.lastMove = true;
-    }else{this.lastMove = false}
-    console.log(this.moveChair);
+  setScrollEvents(){
     
+    console.log(this.room);
+    console.log(this.video);
+    
+    
+    
+    this.timeline = new GSAP.timeline();
+    this.timeline.to(this.room.children[6].position,{
+    x: -8,
+      scrollTrigger:{
+        trigger: ".first-section",
+        // duration: 3,
+        // markers: true,
+        start: "center top",
+        end: "bottom top",
+        scrub: 4,
+      }
+    })
+    this.timeline.to(this.room.children[6].children[0].rotation,{
+      y: -2,
+        scrollTrigger:{
+          trigger: ".first-section",
+          start: "center top",
+          end: "bottom top",
+          scrub: 4,
+        }
+      })
+    this.timeline.to([this.room.children[22].scale, this.room.children[23].scale, this.room.children[24].scale],{
+        x: 1,
+        y: 1,
+        z: 1,
+          scrollTrigger:{
+            trigger: ".second-section",
+            markers: true,
+            start: "top top",
+            end: "top top",
+            scrub: 3,
+          }
+        })
   }
+
   resize(){}
 
   update(){
@@ -110,6 +124,6 @@ export default class Controls{
     this.curve.getPointAt(this.lerp.current, this.position);
     //update camera move
     this.camera.perspectiveCamera.position.copy(this.position)
-    this.onChangePosition();
+    
   }
 }

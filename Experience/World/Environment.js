@@ -1,5 +1,4 @@
 import * as THREE from "three";
-import GUI from "lil-gui";
 import Experience from "../Experience.js";
 import GSAP from "gsap";
 
@@ -10,7 +9,7 @@ export default class Environment{
   this.resources = this.experience.resources;
   this.room = this.resources.items.room;
   this.actualRoom = this.room.scene;
-  this.gui = new GUI();
+  
   this.obj = {
     colorObj: {r: 0, g: 0, b: 0},
     intensity: 3,
@@ -18,23 +17,11 @@ export default class Environment{
     
   this.setSunLight();
   this.setLampLight()
-  this.setGUI();
+
 
   }
 
-  setGUI(){
-    this.gui.addColor(this.obj, "colorObj").onChange(()=>{
-        this.setSunLight.color.copy(this.obj.colorObj)
-        this.ambientLight.color.copy(this.obj.colorObj)
-        
-        
-        
-    });
-    this.gui.add(this.obj, "intensity", 0, 10).onChange(()=>{
-      this.setSunLight.intensity = this.obj.intensity
-      this.ambientLight.intensity = this.obj.intensity
-    })
-  }
+
 
   setSunLight(){
     this.setSunLight = new THREE.DirectionalLight("#ffffff", 2);
@@ -75,7 +62,7 @@ export default class Environment{
         intensity: 0.68,
       })
       GSAP.to(this.light, {delay: 1, intensity: 1})
-      GSAP.to(this.actualRoom.children[39].material.emissive,{
+      GSAP.to(this.actualRoom.children[36].material.emissive,{
       delay: 1,
       r: 242/255,
       g: 219/255,
@@ -99,7 +86,7 @@ export default class Environment{
       intensity: 1,
     })
     GSAP.to(this.light, {intensity: 0})
-    GSAP.to(this.actualRoom.children[39].material.emissive,{
+    GSAP.to(this.actualRoom.children[36].material.emissive,{
       r: 0,
       g: 0,
       b: 0

@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .experience{
@@ -11,6 +12,8 @@
 }
 
 .experience-canvas{
+  z-index: 1;
+  position: fixed;
   width: 100%;
   height: 100%;
 }
@@ -85,3 +88,48 @@ transform: scale(0.9);
 .slide{
   left: 28px;
 }
+/* Wrapper of all sections -------------------------------------*/
+.section-wrapper{
+position: absolute;
+z-index: 3;
+}
+/* First section ------------------------------------------------*/
+.first-section{
+position: relative;
+height: 200vh;
+width: 100vw;
+}
+/* Second section -----------------------------------------------*/
+.second-section{
+  position: relative;
+height: 200vh;
+width: 100vw;
+}
+/* Third section - content ----------------------------------------*/
+.third-section{
+position: relative;
+visibility: hidden;
+height: 200vh;
+width: 100vw;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: gray;
+}
+
+/* Fourth section - content -----------------------------------------*/
+.fourth-section{
+  position: relative;
+  visibility: hidden;
+  height: 200vh;
+  width: 100vw;
+  background-color: red;
+}
+
+/* Fifth section - content -------------------------------------------*/
+.fifth-section{
+  position: relative;
+  height: 200vh;
+  width: 100vw;
+}
+

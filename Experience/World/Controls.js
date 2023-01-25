@@ -1,129 +1,280 @@
-import * as THREE from "three"
-import Experience from "../Experience.js"
-import GSAP from "gsap"
+import * as THREE from "three";
+import Experience from "../Experience.js";
+import GSAP from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 
-export default class Controls{
-  constructor(){
-  this.experience = new Experience();
-  this.scene = this.experience.scene;
-  this.resources = this.experience.resources;
-  this.room = this.experience.world.room.actualRoom;
-  this.camera = this.experience.camera;
-  this.video =this.resources.video;
+export default class Controls {
+  constructor() {
+    this.experience = new Experience();
+    this.scene = this.experience.scene;
+    this.resources = this.experience.resources;
+    this.room = this.experience.world.room.actualRoom;
+    this.camera = this.experience.camera;
+    this.assets = this.resources.assets;
+    this.video = this.resources.video;
 
-  GSAP.registerPlugin(ScrollTrigger);
+    GSAP.registerPlugin(ScrollTrigger);
+    this.progress = 0;
 
-  //path start
+    this.lerp = {
+      current: 0,
+      target: 0,
+      ease: 0.1,
+    };
+    //Camera point start
+    this.position = new THREE.Vector3(0, 1, 5);
 
-  this.lerp = {
-    current: 0,
-    target: 0,
-    ease: 0.1,
+    this.setScrollEvents();
+    this.pendulumAnimation();
   }
 
-  this.position = new THREE.Vector3(0, 0, 0);
- 
-  
-  this.setPath();
-  this.onWheel();
-  this.setScrollEvents();
-  }
-  //Camera movement path
-  setPath(){
-    this.curve = new THREE.CatmullRomCurve3( [
-      this.start = new THREE.Vector3( 0, 1, 5 ),
-      
-      new THREE.Vector3( 0.05641930594255906, 0.9161117992843052, 2.006360491755347 ),
-      // new THREE.Vector3( -0.014517055663079707, 1.0293164773669006, 0.7536915231425607 ),
-      // new THREE.Vector3( 0.05641930594255906, 0.9161117992843052, 2.006360491755347 ),
-      new THREE.Vector3( -0.6500883576856545, 1.2572904433156957, 0.6092011297529916 ),
-      new THREE.Vector3( 0.05641930594255906, 0.9161117992843052, 2.006360491755347 ),
-      new THREE.Vector3(  0.6473685475229742, 1.2074805317551132, 0.5473854247308692 ),
-      new THREE.Vector3( 0.05641930594255906, 0.9161117992843052, 2.006360491755347 ),
-      new THREE.Vector3( 0.25686563748296154, 2.293167529488839, 1.899618184015138 ),
-      new THREE.Vector3( 1.4027181624752532, 0.9431663815405383, 1.2614991329454321, ),
-      
-     
-    ]);
-    const points = this.curve.getPoints( 50 );
-    const geometry = new THREE.BufferGeometry().setFromPoints( points );
-    
-    const material = new THREE.LineBasicMaterial({
-      colorWrite: false
+  pendulumAnimation() {
+    this.pendulumTL = new GSAP.timeline({ repeat: -1 });
+
+    this.pendulumTL.to(this.room.children[34].rotation, {
+      duration: 0.3,
+      z: -0.5,
     });
-  
-    const curveObject = new THREE.Line( geometry, material );
-    this.scene.add(curveObject)
+    this.pendulumTL.to(this.room.children[34].rotation, {
+      duration: 0.3,
+      z: 0,
+    });
+    this.pendulumTL.to(this.room.children[33].rotation, {
+      duration: 0.3,
+      z: 0.5,
+    });
+    this.pendulumTL.to(this.room.children[33].rotation, {
+      duration: 0.3,
+      z: 0,
+    });
+    this.pendulumTL.pause();
   }
-//setting the camera movement by scrolling
-  onWheel(){
-    window.addEventListener("wheel", (e) => {
-      if(e.deltaY > 0){
-        this.lerp.target += 0.01;
-      }else{
-        this.lerp.target -= 0.01;
-        if(this.progress < 0){
-          this.progress = 1;
-        }
-      }
-    })
-  }
-  setScrollEvents(){
-    
-    console.log(this.room);
-    console.log(this.video);
-    
-    
-    
+
+  setScrollEvents() {
     this.timeline = new GSAP.timeline();
-    this.timeline.to(this.room.children[6].position,{
-    x: -8,
-      scrollTrigger:{
+    //chair movement - first section
+    this.timeline.to(this.room.children[6].position, {
+      x: -8,
+      scrollTrigger: {
         trigger: ".first-section",
-        // duration: 3,
         // markers: true,
         start: "center top",
         end: "bottom top",
+        onEnter: () => {
+          GSAP.to(this.position, {
+            duration: 1,
+            x: 0.06119349684492181,
+            y: 0.94950572877101,
+            z: 3.9728770539365845,
+          });
+        },
+        onLeaveBack: () => {
+          GSAP.to(this.position, {
+            duration: 1,
+            x: 0,
+            Y: 1,
+            z: 6,
+          });
+        },
         scrub: 4,
-      }
-    })
-    this.timeline.to(this.room.children[6].children[0].rotation,{
+      },
+    });
+    //chair rotation - first section
+    this.timeline.to(this.room.children[6].children[0].rotation, {
       y: -2,
-        scrollTrigger:{
-          trigger: ".first-section",
-          start: "center top",
-          end: "bottom top",
-          scrub: 4,
-        }
-      })
-    this.timeline.to([this.room.children[22].scale, this.room.children[23].scale, this.room.children[24].scale],{
+      scrollTrigger: {
+        trigger: ".first-section",
+        start: "center top",
+        end: "bottom top",
+        scrub: 1,
+      },
+    });
+    //screens appear - second section
+    this.timeline.to(
+      [
+        this.room.children[22].scale,
+        this.room.children[23].scale,
+        this.room.children[24].scale,
+      ],
+      {
         x: 1,
         y: 1,
         z: 1,
-          scrollTrigger:{
-            trigger: ".second-section",
-            markers: true,
-            start: "top top",
-            end: "top top",
-            scrub: 3,
-          }
-        })
+        scrollTrigger: {
+          trigger: ".second-section",
+          // markers: true,
+          start: "top top",
+          end: "top top",
+          onEnter: () => {
+            GSAP.to(this.position, {
+              duration: 1,
+              x: 0.1152208664230902,
+              y: 0.8933386687227702,
+              z: 2.430882777175016,
+            });
+            this.video.screen.currentTime = 0;
+            this.video.screen.play();
+          },
+          onLeaveBack: () => {
+            GSAP.to(this.position, {
+              duration: 1,
+              x: 0.06119349684492181,
+              y: 0.94950572877101,
+              z: 3.9728770539365845,
+            });
+            this.video.screen.pause();
+          },
+          scrub: 1,
+        },
+      }
+    );
+    //close-up left monitor - third section
+    this.timeline.to(this.room.children[24].scale, {
+      x: 0,
+      y: 0,
+      z: 0,
+      scrollTrigger: {
+        trigger: ".third-section",
+        // markers: true,
+        start: "top top",
+        end: "bottom bottom",
+
+        onEnter: () => {
+          GSAP.to(this.position, {
+            duration: 1,
+            x: -0.6437755005292624,
+            y: 1.2530442933083061,
+            z: 0.6271414440920943,
+          });
+          GSAP.to(".third-section", {
+            autoAlpha: 1,
+          });
+        },
+        onLeaveBack: () => {
+          GSAP.to(this.position, {
+            duration: 1,
+            x: 0.1152208664230902,
+            y: 0.8933386687227702,
+            z: 2.430882777175016,
+          });
+          GSAP.to(".third-section", {
+            autoAlpha: 0,
+          });
+        },
+        onLeave: () => {
+          GSAP.to(this.position, {
+            duration: 1,
+            x: 0.1152208664230902,
+            y: 0.8933386687227702,
+            z: 2.430882777175016,
+          });
+          GSAP.to(".third-section", {
+            autoAlpha: 0,
+          });
+        },
+        onEnterBack: () => {
+          GSAP.to(this.position, {
+            duration: 1,
+            x: -0.6437755005292624,
+            y: 1.2530442933083061,
+            z: 0.6271414440920943,
+          });
+          GSAP.to(".third-section", {
+            autoAlpha: 1,
+          });
+        },
+        scrub: 1,
+      },
+    });
+    //close-up right monitor - fourth section
+    this.timeline.to(this.room.children[23].scale, {
+      x: 0,
+      y: 0,
+      z: 0,
+      scrollTrigger: {
+        trigger: ".fourth-section",
+        // markers: true,
+        start: "top top",
+        end: "bottom bottom",
+
+        onEnter: () => {
+          GSAP.to(this.position, {
+            x: 0.6111381144592749,
+            y: 1.1797202553868453,
+            z: 0.6819227739366736,
+          });
+          GSAP.to(".fourth-section", {
+            autoAlpha: 1,
+          });
+        },
+        onLeaveBack: () => {
+          GSAP.to(this.position, {
+            x: 0.1152208664230902,
+            y: 0.8933386687227702,
+            z: 2.430882777175016,
+          });
+          GSAP.to(".fourth-section", {
+            autoAlpha: 0,
+          });
+        },
+        onLeave: () => {
+          GSAP.to(this.position, {
+            duration: 0.5,
+            x: 0.1152208664230902,
+            y: 0.8933386687227702,
+            z: 2.430882777175016,
+          });
+          GSAP.to(".fourth-section", {
+            autoAlpha: 0,
+          });
+        },
+        onEnterBack: () => {
+          GSAP.to(this.position, {
+            duration: 0.5,
+            x: 0.6111381144592749,
+            y: 1.1797202553868453,
+            z: 0.6819227739366736,
+          });
+          GSAP.to(".fourth-section", {
+            autoAlpha: 1,
+          });
+        },
+        scrub: 1,
+      },
+    });
+    //view on the pendulum - fifth sectioon
+    this.timeline.to(this.room.children[14].scale, {
+      x: 1,
+      y: 1,
+      z: 1,
+      scrollTrigger: {
+        trigger: ".fifth-section",
+        markers: true,
+        start: "top top",
+        end: "bottom bottom",
+        onEnter: () => {
+          GSAP.to(this.position, {
+            x: 1.4027181624752494,
+            y: 0.9431663815405424,
+            z: 1.261499132945434,
+          });
+          this.pendulumTL.resume();
+        },
+        onLeaveBack: () => {
+          GSAP.to(this.position, {
+            x: 0.6111381144592749,
+            y: 1.1797202553868453,
+            z: 0.6819227739366736,
+          });
+          this.pendulumTL.pause();
+        },
+      },
+    });
   }
 
-  resize(){}
+  resize() {}
 
-  update(){
-    this.lerp.current = GSAP.utils.interpolate(
-        this.lerp.current,
-        this.lerp.target,
-        this.lerp.ease
-      );
-    this.lerp.target = GSAP.utils.clamp(0, 1, this.lerp.target)
-    this.lerp.current = GSAP.utils.clamp(0, 1, this.lerp.current)
-    this.curve.getPointAt(this.lerp.current, this.position);
-    //update camera move
-    this.camera.perspectiveCamera.position.copy(this.position)
-    
+  update() {
+    this.camera.perspectiveCamera.position.copy(this.position);
   }
 }

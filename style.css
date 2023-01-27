@@ -41,8 +41,6 @@ width: 100vw;
 .third-section{
 position: relative;
 visibility: hidden;
-height: 500vh;
-width: 100vw;
 background-color: #fff;
 }
 
@@ -50,8 +48,6 @@ background-color: #fff;
 .fourth-section{
   position: relative;
   visibility: hidden;
-  height: 200vh;
-  width: 100vw;
   background-color: #fff;
 }
 

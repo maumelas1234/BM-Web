@@ -1,12 +1,12 @@
-import * as THREE from "three"
-import Experience from "../Experience.js"
+import * as THREE from "three";
+import Experience from "../Experience.js";
 
 import Room from "./Room.js";
 import Controls from "./Controls.js";
 import Environment from "./Environment.js";
 
-export default class World{
-  constructor(){
+export default class World {
+  constructor() {
     this.experience = new Experience();
     this.sizes = this.experience.sizes;
     this.scene = this.experience.scene;
@@ -15,30 +15,30 @@ export default class World{
     this.resources = this.experience.resources;
     this.theme = this.experience.theme;
 
-    this.resources.on("ready", ()=>{
+    this.resources.on("ready", () => {
       //when all loaded - Room will be created
       this.environment = new Environment();
       this.room = new Room();
       this.controls = new Controls();
-    })
+    });
 
-    this.theme.on("switch", (theme) =>{
-      this.switchTheme(theme)
-    })
+    this.theme.on("switch", (theme) => {
+      this.switchTheme(theme);
+    });
   }
 
-  switchTheme(theme){
-    if(this.environment){
-      this.environment.switchTheme(theme)
+  switchTheme(theme) {
+    if (this.environment) {
+      this.environment.switchTheme(theme);
     }
   }
-  resize(){}
+  resize() {}
 
-  update(){
-    if(this.room){
+  update() {
+    if (this.room) {
       this.room.update();
     }
-    if(this.controls){
+    if (this.controls) {
       this.controls.update();
     }
   }

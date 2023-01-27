@@ -41,5 +41,19 @@
 .qualification__country{
   margin-bottom: .75rem;
 }
+/*---------------------------------------------------------*/
+
+.end-section{
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.end-section i{
+padding: 1rem;
+font-size: 3rem; 
+}
 
 

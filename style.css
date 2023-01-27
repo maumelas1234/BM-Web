@@ -1,9 +1,11 @@
+/* Reset styel */
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
 }
+
 
 .experience{
   position: fixed;
@@ -12,86 +14,16 @@
 }
 
 .experience-canvas{
-  z-index: 1;
+  z-index: var(--z-normal);
   position: fixed;
   width: 100%;
   height: 100%;
 }
 
-
-
-
-
-/*Toggle/Menu Bar -------------------------------------*/
-.toggle-wrapper{
-position: fixed;
-z-index: 9999999;
-display: flex;
-justify-content: right;
-align-items: center;
-top: 3%;
-right:0;
-width: 200px;
-height: 45px;
-background-color: #fff;
-border-radius: 50px 0 0 50px;
-}
-
-.toggle-bar{
-position: relative;
-margin-right: 20px;
-display: flex;
-justify-content: right;
-align-items: center;
-}
-
-.sun-wrapper,
-.moon-wrapper,
-.menu{
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-.menu{
-  padding-left: 25px;
-}
-
-.toggle-button{
-  overflow: hidden;
-  width: 50px;
-  height: 24px;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  background-color: blueviolet;
-  border-radius: 999px;
-  margin: 0px 5px;
-  border: none;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;;
-}
-
-.toggle-circle{
-position: relative;
-left: 3px;
-border-radius: 50%;
-width:17px;
-height: 17px;
-background-color: #fff;
-transition: all 0.2s ease-in-out;
-}
-
-.toggle-button:hover .toggle-circle{
-transform: scale(0.9);
-}
-
-.slide{
-  left: 28px;
-}
 /* Wrapper of all sections -------------------------------------*/
 .section-wrapper{
 position: absolute;
-z-index: 3;
+z-index: 1;
 }
 /* First section ------------------------------------------------*/
 .first-section{
@@ -101,7 +33,7 @@ width: 100vw;
 }
 /* Second section -----------------------------------------------*/
 .second-section{
-  position: relative;
+position: relative;
 height: 200vh;
 width: 100vw;
 }
@@ -109,12 +41,9 @@ width: 100vw;
 .third-section{
 position: relative;
 visibility: hidden;
-height: 200vh;
+height: 500vh;
 width: 100vw;
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: gray;
+background-color: #fff;
 }
 
 /* Fourth section - content -----------------------------------------*/
@@ -123,7 +52,7 @@ background-color: gray;
   visibility: hidden;
   height: 200vh;
   width: 100vw;
-  background-color: red;
+  background-color: #fff;
 }
 
 /* Fifth section - content -------------------------------------------*/

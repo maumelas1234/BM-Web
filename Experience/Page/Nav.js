@@ -1,4 +1,4 @@
-export default class Header {
+export default class Nav {
   constructor() {
     this.navMenu = document.querySelector(".nav__menu");
     this.navToggle = document.querySelector(".nav__toggle");

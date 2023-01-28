@@ -29,6 +29,20 @@ font-family: var(--title-font);
 font-weight: var(--font-medium);
 }
 
+.nav__buttons{
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+}
+
+.nav__change{
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+  transition: color .3s
+}
+
+
 .nav__toggle{
 display: flex;
 font-size: 1.25rem;
@@ -85,5 +99,9 @@ font-size: 1.25rem;
 
 .show-menu{
   top: 1rem;
+}
+
+.active-link{
+color: var(--title-color);
 }
 

@@ -20,6 +20,10 @@ text-align: center;
   column-gap: 2.5rem;
 }
 
+.footer__link{
+  color: var(--text-color-light)
+}
+
 .footer__link:hover{
   text-decoration: underline;
 }

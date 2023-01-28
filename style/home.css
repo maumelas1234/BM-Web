@@ -10,7 +10,7 @@ padding-top: 10rem;
 .home__title{
   text-align: center;
   font-size: var(--biggest-font-size);
-  letter-spacing: .3px;
+  letter-spacing: 2px;
   margin-bottom: .5rem;
 }
 
@@ -72,6 +72,7 @@ padding-top: 10rem;
 .home__info-description,
 .home__info-number{
   font-family: var(--title-font);
+  letter-spacing: 1px;
   color: var(--title-color)
 }
 

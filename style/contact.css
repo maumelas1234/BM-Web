@@ -90,10 +90,10 @@
 .contact__form-tag{
   position: absolute;
   z-index: 4;
-  top: -.55rem;
+  top: -.45rem;
   left: 1.25rem;
   z-index: 10;
-  background-color: #fff;
+  background-color: var(--body-color);
   color: var(--title-color);
   font-size: var(--smaller-font-size);
   font-weight: var(--font-medium);

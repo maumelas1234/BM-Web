@@ -1,3 +1,7 @@
+.section__title{
+letter-spacing: 2px;
+}
+
 .skills__container{
   row-gap: 3.5rem;
 }
@@ -7,7 +11,8 @@
   justify-content: center;
   align-items: center;
   column-gap: .5rem;
-  font-size: var(--smaller-font-size);
+  letter-spacing: 1px;
+  font-size: var(--medium-font-size);
   margin-bottom: 2.5rem;
 }
 
@@ -46,11 +51,13 @@
 
 .skills__name{
   font-size: var(--smaller-font-size);
+  letter-spacing: 1px;
   margin-bottom: .25rem;
 }
 
 .skills__subtitle{
   font-size: var(--tiny-font-size);
+  letter-spacing: 1px;
   color: var(--text-color-light)
 }
 

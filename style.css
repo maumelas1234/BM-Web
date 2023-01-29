@@ -11,6 +11,7 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 .experience-canvas{
@@ -18,6 +19,7 @@
   position: fixed;
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
 }
 
 /* Wrapper of all sections -------------------------------------*/
@@ -41,20 +43,25 @@ width: 100vw;
 .third-section{
 position: relative;
 visibility: hidden;
-background-color: #fff;
+background-color: var(--body-color);
+transition: background-color .4s;
 }
 
 /* Fourth section - content -----------------------------------------*/
 .fourth-section{
   position: relative;
   visibility: hidden;
-  background-color: #fff;
+  background-color: var(--body-color);
+  transition: background-color .4s;
 }
 
 /* Fifth section - content -------------------------------------------*/
 .fifth-section{
+  visibility: hidden;
   position: relative;
   height: 200vh;
   width: 100vw;
+  background: rgba(0, 0, 0, 0.7);
+  /* transition: visibility .3s; */
 }
 

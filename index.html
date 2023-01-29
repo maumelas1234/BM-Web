@@ -16,7 +16,7 @@
   <div class="experiance">
     <canvas class="experience-canvas"></canvas>
   </div>
-  <header class="header">
+  <header class="header" id="header">
     <nav class="nav container">
       <a href="#" class="nav__logo">
         BM
@@ -24,7 +24,7 @@
       <div class="nav__menu">
         <ul class="nav__list grid">
           <li class="nav__item">
-            <a href="#home" class="nav__link">
+            <a href="#home" class="nav__link active-link">
               <i class="ri-home-4-line"></i>Home
             </a>
           </li>
@@ -59,7 +59,7 @@
         </div>
       </div>
       <div class="nav__buttons">
-        <!-- <i class="ri-moon-line"></i> -->
+        <i class="ri-moon-line change-theme" id="theme-button"></i>
         <div class="nav__toggle">
           <i class="ri-menu-line"></i>
         </div>
@@ -69,9 +69,9 @@
   <div class="section-wrapper">
     <div class="first-section"></div>
     <div class="second-section"></div>
-    <main class="third-section">
+    <div class="third-section">
       <!--========================================== HOME =================================================-->
-      <section class="home">
+      <section class="home" id="home">
         <div class="home__container container grid section__border">
           <div class="home__data grid">
             <h1 class="home__title">
@@ -87,15 +87,13 @@
 
             </div>
             <ul class="home__social">
-              <a href="#" target="_blank" class="home__social-link">
+              <a href="https://www.linkedin.com/in/bart%C5%82omiej-mazur-bab36523b/" target="_blank" class="home__social-link">
                 <i class="ri-linkedin-box-line"></i>
               </a>
-              <a href="#" target="_blank" class="home__social-link">
+              <a href="https://github.com/bartlomiejmazur" target="_blank" class="home__social-link">
                 <i class="ri-github-line"></i>
               </a>
-              <a href="#" target="_blank" class="home__social-link">
-                <i class="ri-mail-line"></i>
-              </a>
+              
             </ul>
           </div>
           <!--========================================== HOME INFO 1=================================================-->
@@ -160,7 +158,7 @@
         </div>
       </section>
       <!--========================================== SKILLS =================================================-->
-      <section class="skills section">
+      <section class="skills section" id="skills">
         <h2 class="section__title">Skills</h2>
         <span class="section__subtitle">My favorite skills</span>
 
@@ -296,8 +294,9 @@
           </div>
         </div>
       </section>
-      <section class="qualification section">
-        <!--========================================== QUALIFICATION =================================================-->
+      <!--========================================== QUALIFICATION =================================================-->
+      <section class="qualification section" id="qualification">
+        
         <h2 class="section__title">Qualification</h2>
         <span class="section__subtitle">Experience & education</span>
 
@@ -355,12 +354,13 @@
 
           </div>
         </div>
+        <span class="end-section"><i class="ri-movie-line"></i> To be continued.... </span>
       </section>
-      <span class="end-section"><i class="ri-movie-line"></i> To be continued.... </span>
-    </main>
+      
+    </div>
     <div class="fourth-section">
       <!--========================================== SERVICES =================================================-->
-      <section class="services section">
+      <section class="services section" id="services">
         
         <h2 class="section__title">Services</h2>
         <span class="section__subtitle">What I offer</span>
@@ -411,55 +411,57 @@
         </div>
       </section>
       <!--========================================== PROJECTS =================================================-->
-      <section class="projects section">
+      <section class="projects section" id="projects">
         <h2 class="section__title">Projects</h2>
         <span class="section__subtitle">My work</span>
 
         <div class="container section__border">
-          <div class="projects__container">
-            <div>
+          <div class="projects__container swiper">
+            <div class="swiper-wrapper">
               <!--========================================== PROJECT 1=======-->
-              <div class="projects__content section">
+              <div class="projects__content swiper-slide">
                 <img src="./img/project1.jpg" alt="projects image" class="projects__img">
                 <div>
                   <span class="projects__subtitle">Web</span>
                   <h1 class="projects__title">Modern website</h1>
-                  <a href="#" class="projects__button">
+                  <!-- <a href="https://bartlomiejmazur.github.io/SMPTuszymka/" class="projects__button">
                     View demo <i class="ri-arrow-right-line"></i>
-                  </a>
+                  </a> -->
                 </div>
               </div>
               <!--========================================== PROJECT 2 ==================-->
-              <div class="projects__content section">
+              <div class="projects__content swiper-slide">
                 <img src="./img/project2.jpg" alt="projects image" class="projects__img">
                 <div>
                   <span class="projects__subtitle">Web</span>
                   <h1 class="projects__title">Store</h1>
-                  <a href="#" class="projects__button">
+                  <!-- <a href="https://bartlomiejmazur.github.io/shopping_app/" class="projects__button">
                     View demo <i class="ri-arrow-right-line"></i>
-                  </a>
+                  </a> -->
                 </div>
               </div>
               <!--========================================== PROJECT 3 ==================-->
-              <div class="projects__content">
+              <div class="projects__content swiper-slide">
                 <img src="./img/project3.jpg" alt="projects image" class="projects__img">
                 <div>
                   <span class="projects__subtitle">Web</span>
                   <h1 class="projects__title">AI picture generator</h1>
-                  <a href="#" class="projects__button">
+                  <!-- <a href="https://github.com/bartlomiejmazur/Generator_img_by_Dall-e" class="projects__button">
                     View demo <i class="ri-arrow-right-line"></i>
-                  </a>
+                  </a> -->
                 </div>
               </div>
+            
             </div>
             <div class="swiper-pagination"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
+           
           </div>
         </div>
       </section>
       <!--========================================== CONTACT =================================================-->
-      <section class="contact section">
+      <section class="contact section" id="contact">
         
         <h2 class="section__title">Contact Me</h2>
         <span class="section__subtitle">Get in touch</span>
@@ -525,13 +527,13 @@
           </ul>
 
             <ul class="footer__social">
-              <a href="" target="_blank" class="footer__social-link">
+              <a href="https://www.linkedin.com/in/bart%C5%82omiej-mazur-bab36523b/" target="_blank" class="footer__social-link">
                 <i class="ri-linkedin-box-line"></i>
               </a>
-              <a href="" target="_blank" class="footer__social-link">
+              <a href="https://github.com/bartlomiejmazur" target="_blank" class="footer__social-link">
                 <i class="ri-github-line"></i>
               </a>
-              <a href="" target="_blank" class="footer__social-link">
+              <a  target="_blank" class="footer__social-link">
                 <i class="ri-facebook-line"></i>
               </a>
             </ul>
@@ -541,10 +543,44 @@
             </span>
         </div>
       </footer>
+    
     </div>
-    <div class="fifth-section"></div>
+    <a href="#home" class="scrollup" id="scroll-up"><i class="ri-arrow-up-line"></i></a>
+    
+    <div class="fifth-section">
+      <div class="rate__container">
+        <button class="rate__container-close"><i class="ri-close-circle-line"></i></button>
+        <div class="rate__widget">
+          <div class="stars">
+          <input type="radio" name="rate" class="star" id="rate-1">
+          <label for="rate-5" class="ri-star-fill"></label>
+          <input type="radio" name="rate" class="star" id="rate-2">
+          <label for="rate-4" class="ri-star-fill"></label>
+          <input type="radio" name="rate" class="star" id="rate-3">
+          <label for="rate-3" class="ri-star-fill"></label>
+          <input type="radio" name="rate" class="star" id="rate-4">
+          <label for="rate-2" class="ri-star-fill"></label>
+          <input type="radio" name="rate" class="star" id="rate-5">
+          <label for="rate-1" class="ri-star-fill"></label>
+        </div>
+          <form action="#" id="rate-form">
+        
+          <p></p>
+          <div class="textarea">
+            <textarea name="rate_description" id="" cols="30" placeholder="Descripe your experiance"></textarea>
+          </div>
+          <button type="submit" class="rate__btn">Rate</button>
+        </form>
+          
+        </div>
+      </div>
+    </div>
   </div>
-
+  <div class="preloader">
+    <div class="preloader__container">
+    <h1>BM</h1>
+    </div>
+  </div>
   
 <!--======================= MAIN ========================-->
   <script type="module" src="/main.js"></script>

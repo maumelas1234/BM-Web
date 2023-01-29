@@ -16,14 +16,11 @@ import "./style/breakpoints.css";
 import Experience from "./Experience/Experience";
 
 import Nav from "./Experience/Page/Nav";
-// import Slider from "./Experience/Page/Slider";
 import Email from "./Experience/Page/Email";
 import Scroll from "./Experience/Page/Scroll";
-// import RateModal from "./Experience/Page/RateModal";
 
 const experience = new Experience(document.querySelector(".experience-canvas"));
 
 const nav = new Nav();
 const email = new Email();
 const scrool = new Scroll();
-const rateModal = new RateModal();

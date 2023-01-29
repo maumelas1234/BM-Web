@@ -19,7 +19,7 @@ import Nav from "./Experience/Page/Nav";
 // import Slider from "./Experience/Page/Slider";
 import Email from "./Experience/Page/Email";
 import Scroll from "./Experience/Page/Scroll";
-import RateModal from "./Experience/Page/RateModal";
+// import RateModal from "./Experience/Page/RateModal";
 
 const experience = new Experience(document.querySelector(".experience-canvas"));
 

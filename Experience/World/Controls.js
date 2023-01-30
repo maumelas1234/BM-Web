@@ -24,6 +24,13 @@ export default class Controls {
     this.pendulumAnimation();
   }
 
+  delayScroll() {
+    document.querySelector("html").classList.add("hidden-scroll");
+    setTimeout(() => {
+      document.querySelector("html").classList.remove("hidden-scroll");
+    }, 1000);
+  }
+
   pendulumAnimation() {
     this.pendulumTL = new GSAP.timeline({ repeat: -1 });
 
@@ -57,7 +64,7 @@ export default class Controls {
           scrollTrigger: {
             trigger: ".first-section",
             // markers: true,
-            start: "center top",
+            start: "top top",
             end: "bottom top",
             onEnter: () => {
               GSAP.to(this.position, {
@@ -146,8 +153,10 @@ export default class Controls {
                 z: 0.6271414440920943,
               });
               GSAP.to([".third-section", ".scrollup"], {
+                delay: 1,
                 autoAlpha: 1,
               });
+              this.delayScroll();
             },
             onLeaveBack: () => {
               GSAP.to(this.position, {
@@ -170,6 +179,7 @@ export default class Controls {
               GSAP.to([".third-section", ".scrollup"], {
                 autoAlpha: 0,
               });
+              this.delayScroll();
             },
             onEnterBack: () => {
               GSAP.to(this.position, {
@@ -203,8 +213,10 @@ export default class Controls {
                 z: 0.6819227739366736,
               });
               GSAP.to([".fourth-section", ".scrollup"], {
+                delay: 1,
                 autoAlpha: 1,
               });
+              this.delayScroll();
             },
             onLeaveBack: () => {
               GSAP.to(this.position, {
@@ -288,7 +300,7 @@ export default class Controls {
           scrollTrigger: {
             trigger: ".first-section",
             // markers: true,
-            start: "center top",
+            start: "top top",
             end: "bottom top",
             onEnter: () => {
               GSAP.to(this.position, {
@@ -314,7 +326,7 @@ export default class Controls {
           y: -2,
           scrollTrigger: {
             trigger: ".first-section",
-            start: "center top",
+            start: "top top",
             end: "bottom top",
             scrub: 1,
           },
@@ -377,15 +389,17 @@ export default class Controls {
                 z: 0.6271414440920943,
               });
               GSAP.to([".third-section", ".header", ".scrollup"], {
+                delay: 1,
                 autoAlpha: 1,
               });
+              this.delayScroll();
             },
             onLeaveBack: () => {
               GSAP.to(this.position, {
                 duration: 1,
-                x: 0.1152208664230902,
+                x: 0,
                 y: 0.8933386687227702,
-                z: 2.430882777175016,
+                z: 3.430882777175016,
               });
               GSAP.to([".third-section", ".scrollup"], {
                 autoAlpha: 0,
@@ -394,13 +408,14 @@ export default class Controls {
             onLeave: () => {
               GSAP.to(this.position, {
                 duration: 1,
-                x: 0.1152208664230902,
+                x: 0,
                 y: 0.8933386687227702,
-                z: 2.430882777175016,
+                z: 3.430882777175016,
               });
               GSAP.to([".third-section", ".scrollup"], {
                 autoAlpha: 0,
               });
+              this.delayScroll();
             },
             onEnterBack: () => {
               GSAP.to(this.position, {
@@ -434,14 +449,16 @@ export default class Controls {
                 z: 0.6819227739366736,
               });
               GSAP.to([".fourth-section", ".scrollup"], {
+                delay: 1,
                 autoAlpha: 1,
               });
+              this.delayScroll();
             },
             onLeaveBack: () => {
               GSAP.to(this.position, {
-                x: 0.1152208664230902,
+                x: 0,
                 y: 0.8933386687227702,
-                z: 2.430882777175016,
+                z: 3.430882777175016,
               });
               GSAP.to([".fourth-section", ".scrollup"], {
                 autoAlpha: 0,
@@ -450,13 +467,14 @@ export default class Controls {
             onLeave: () => {
               GSAP.to(this.position, {
                 duration: 0.5,
-                x: 0.1152208664230902,
+                x: 0,
                 y: 0.8933386687227702,
-                z: 2.430882777175016,
+                z: 3.430882777175016,
               });
               GSAP.to([".fourth-section", ".scrollup"], {
                 autoAlpha: 0,
               });
+              this.delayScroll();
             },
             onEnterBack: () => {
               GSAP.to(this.position, {
@@ -484,7 +502,7 @@ export default class Controls {
             end: "bottom bottom",
             onEnter: () => {
               GSAP.to(this.position, {
-                x: 1.4027181624752494,
+                x: 1.3227181624752494,
                 y: 0.9431663815405424,
                 z: 1.261499132945434,
               });
@@ -497,9 +515,9 @@ export default class Controls {
             },
             onLeaveBack: () => {
               GSAP.to(this.position, {
-                x: 0.6111381144592749,
-                y: 1.1797202553868453,
-                z: 0.6819227739366736,
+                x: 0,
+                y: 0.8933386687227702,
+                z: 3.430882777175016,
               });
               this.pendulumTL.pause();
             },

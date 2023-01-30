@@ -6,6 +6,10 @@
   overflow-x: hidden;
 }
 
+.hidden-scroll{
+  overflow-y: hidden;
+}
+
 /*-----Variables CSS-------------*/
 :root{
   --header-height: 3.5rem;
@@ -50,18 +54,14 @@
       --small-font-size: .875rem;
       --smaller-font-size: .813rem;
       --tiny-font-size: .688rem;
+     
     }
   }
   /*-----Base----------------*/
   html{
     scroll-behavior: smooth;
   }
-  body{
-    font-family: var(--body-font);
-    font-size: var(--normal-font-size);
-    background-color: var(--body-color);
-    color: var(--text-color);
-  }
+ 
   h1,h2,h3{
   color: var(--title-color);
   font-family: var(--title-font);
@@ -86,7 +86,10 @@
     --text-color: hsl(207, 4%, 65%);
     --body-color: hsl(0, 0%, 15%);
     --container-color: hsl(0, 0%, 19%);
-    
+  }
+
+  .dark-theme .nav__buttons i{
+    color: var(--title-color);
   }
   
   .dark-theme .nav,

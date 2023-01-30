@@ -11,14 +11,13 @@ export default class Preloader extends EventEmitter {
     this.resources = this.experience.resources;
     this.camera = this.experience.camera;
     this.world = this.experience.world;
-
+    document.querySelector("html").classList.add("hidden-scroll");
     this.world.on("worldready", () => {
       this.playIntro();
     });
   }
 
   playIntro() {
-    document.querySelector("html").classList.add("hidden-scroll");
     return new Promise((resolve) => {
       this.timeline = new GSAP.timeline();
 

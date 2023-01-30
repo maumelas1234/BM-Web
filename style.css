@@ -219,33 +219,74 @@ transition: background-color .4s;
 }
 
  /*-----------Preloader---------*/
- .hidden{
-  display: none;
-  }
+ 
   .preloader{
     visibility: visible;
     position: fixed;
     height: 100%;
     width: 100%;
-    z-index: 99999;
+    z-index: 100;
     background-color: #111;
+    
   }
-  
-  .preloader__container{
-    width: 100%;
-    height: 100%;
+  .preloader__center{
     display: flex;
+    text-align: center;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    color: wheat;
+    min-height: 100vh;
   }
+  .preloader__ring{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    animation: ring 2s linear infinite;
+  }
+  @keyframes ring{
+    0%{
+    transform: rotate(0deg);
+    box-shadow: 1px 5px 2px #e65c00;
+    }
+    50%{
+    transform: rotate(180deg);
+    box-shadow: 1px 5px 2px #18b201;
+    }
+    100%{
+    transform: rotate(360deg);
+    box-shadow: 1px 5px 2px #0456c8;
+      }
   
-  .preloader__container h1{
-    color: wheat;
-    font-size: 3rem;
-    padding: 20px;
+
   }
+  .preloader__ring:before{
+  position: absolute;
+  content: '';
+  left:0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(255,255,255, .3);
+  }
+  .preloader__text{
+    visibility: visible;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-family: var(--body-font);
+    letter-spacing: 1px;
+    color: wheat;
+    line-height: 200px;
+  }
+  .preloader__logo{
+    visibility: hidden;
+    position: absolute;
+    color: wheat;
+    font-family: var(--title-font);
+  }
+ 
+  
+
   
 /*------------------------ Nav -------------------------*/
 .header{

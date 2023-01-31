@@ -120,6 +120,7 @@ export default class Controls {
                 });
                 this.video.screen.currentTime = 0;
                 this.video.screen.play();
+                this.delayScroll();
               },
               onLeaveBack: () => {
                 GSAP.to(this.position, {
@@ -356,6 +357,7 @@ export default class Controls {
                 });
                 this.video.screen.currentTime = 0;
                 this.video.screen.play();
+                this.delayScroll();
               },
               onLeaveBack: () => {
                 GSAP.to(this.position, {

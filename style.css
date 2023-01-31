@@ -16,8 +16,8 @@
   /*-----Colors--------------------*/
   --first-color: #21426a;
   --title-color: #1c1d21;
-  --text-color: #494b50;
-  --text-color-light: #bbbbbb;
+  --text-color: #383a3e;
+  --text-color-light: #707070;
   --body-color: #dedede;
   --container-color: #cbc3bb;
   --gradient-color: linear-gradient(189deg,
@@ -321,12 +321,16 @@ border-radius: 3rem;
 .nav__logo{
 font-family: var(--title-font);
 font-weight: var(--font-medium);
+font-size: 2rem;
+cursor: pointer;
 }
 
 .nav__buttons{
   display: flex;
   align-items: center;
   column-gap: 1.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .nav__change{
@@ -339,7 +343,7 @@ font-weight: var(--font-medium);
 
 .nav__toggle{
 display: flex;
-font-size: 1.25rem;
+font-size: 1.5rem;
 cursor: pointer;
 }
 
@@ -486,7 +490,7 @@ color: var(--title-color);
   font-size: var(--h1-font-size);
   }
   
-  /*----------------------- Sjills -------------------*/
+  /*----------------------- Skills -------------------*/
   .section__title{
     letter-spacing: 2px;
     }
@@ -652,6 +656,10 @@ font-size: 3rem;
   padding: 3.5rem 1rem ;
   border-radius: 7.25rem;
   overflow: hidden;
+}
+
+.services__description{
+  color: var(--text-color);
 }
 
 .services__card i{
@@ -907,6 +915,10 @@ font-size: 3rem;
   .footer__social-link:hover{
     transform: translateY(-.15rem);
   }
+
+  footer p{
+    color: var(--text-color)
+  }
   
   .footer__copy{
     display: block;
@@ -1139,6 +1151,18 @@ font-size: 3rem;
       }
       .section__subtitle{
         margin-bottom :5rem;
+      }
+      .active-link{
+        font-weight: 700;
+      }
+      .nav__buttons i{
+        font-size: 1.5rem;
+      }
+      .nav__logo{
+      font-size: 2rem;
+      }
+      .nav__link{
+      font-size: 1.3rem;
       }
      
       .home__title{

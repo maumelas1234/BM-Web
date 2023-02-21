@@ -23,15 +23,13 @@ export default class Preloader extends EventEmitter {
 
       this.timeline.to(".preloader__text", {
         autoAlpha: 0,
-        delay: 1,
       });
       this.timeline.to(".preloader__logo", {
         autoAlpha: 1,
-        delay: 1,
       });
       this.timeline.to(".preloader", {
         autoAlpha: 0,
-        delay: 1,
+
         onComplete: () =>
           document.querySelector("html").classList.remove("hidden-scroll"),
       });

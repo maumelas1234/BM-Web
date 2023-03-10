@@ -67,6 +67,9 @@ export default class Controls {
             start: "top top",
             end: "bottom top",
             onEnter: () => {
+              GSAP.to(".scroll-tip", {
+                autoAlpha: 0,
+              });
               GSAP.to(this.position, {
                 duration: 1,
                 x: 0.06119349684492181,
@@ -304,6 +307,9 @@ export default class Controls {
             start: "top top",
             end: "bottom top",
             onEnter: () => {
+              GSAP.to(".scroll-tip", {
+                autoAlpha: 0,
+              });
               GSAP.to(this.position, {
                 duration: 1,
                 x: 0.06119349684492181,

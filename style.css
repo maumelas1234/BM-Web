@@ -197,6 +197,14 @@ body.dark-theme {
   font-size: 3rem;
 }
 
+.up {
+  display: block;
+}
+
+.down {
+  display: none;
+}
+
 .scroll-tip p {
   letter-spacing: 1px;
   font-size: 1.2rem;
@@ -1092,6 +1100,14 @@ footer p {
 }
 
 @media screen and (min-width: 1023px) {
+  .up {
+    display: none;
+  }
+
+  .down {
+    display: block;
+  }
+
   .header {
     top: 0;
     bottom: initial;

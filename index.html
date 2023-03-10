@@ -1,539 +1,573 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B.Mazur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bitter&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>B.Mazur</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bitter&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
-  
-</head>
-
-<body>
-  <div class="experiance">
-    <canvas class="experience-canvas"></canvas>
-  </div>
-  <header class="header" id="header">
-    <nav class="nav container">
-      <a href="#" class="nav__logo">
-        BM
-      </a>
-      <div class="nav__menu">
-        <ul class="nav__list grid">
-          <li class="nav__item">
-            <a href="#home" class="nav__link active-link">
-              <i class="ri-home-4-line"></i>Home
-            </a>
-          </li>
-          <li class="nav__item">
-            <a href="#skills" class="nav__link">
-              <i class="ri-trophy-line"></i>
-            Skills</a>
-          </li>
-          <li class="nav__item">
-            <a href="#qualification" class="nav__link">
-              <i class="ri-book-open-line"></i>
-            Qualification</a>
-          </li>
-          <li class="nav__item">
-            <a href="#services" class="nav__link">
-              <i class="ri-briefcase-line"></i>
-            Services</a>
-          </li>
-          <li class="nav__item">
-            <a href="#projects" class="nav__link">
-              <i class="ri-image-line"></i>
-            Projects</a>
-          </li>
-          <li class="nav__item">
-            <a href="#contact" class="nav__link">
-              <i class="ri-chat-1-line"></i>
-            Contact</a>
-          </li>
-        </ul>
-        <div class="nav__close">
-          <i class="ri-close-line"></i>
-        </div>
-      </div>
-      <div class="nav__buttons">
-        <i class="ri-moon-line change-theme" id="theme-button"></i>
-        <div class="nav__toggle">
-          <i class="ri-menu-line"></i>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <div class="section-wrapper">
-    <div class="first-section"></div>
-    <div class="second-section"></div>
-    <div class="third-section">
-      <!--========================================== HOME =================================================-->
-      <section class="home" id="home">
-        <div class="home__container container grid section__border">
-          <div class="home__data grid">
-            <h1 class="home__title">
-              Hi, I'm Bartek <br>
-              Frontend Developer <br>
-              Based in Poland
-            </h1>
-
-            <div class="home__blob grid">
-              <div class="home__profile">
-                <img src="/img/profile.png" alt="home profile">
-              </div>
-
-            </div>
-            <ul class="home__social">
-              <a href="https://www.linkedin.com/in/bart%C5%82omiej-mazur-bab36523b/" target="_blank" class="home__social-link">
-                <i class="ri-linkedin-box-line"></i>
+  <body>
+    <div class="experiance">
+      <canvas class="experience-canvas"></canvas>
+    </div>
+    <div class="scroll-tip">
+      <i class="ri-arrow-down-s-line"></i>
+      <i class="ri-arrow-down-s-line"></i>
+    </div>
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo"> BM </a>
+        <div class="nav__menu">
+          <ul class="nav__list grid">
+            <li class="nav__item">
+              <a href="#home" class="nav__link active-link">
+                <i class="ri-home-4-line"></i>Home
               </a>
-              <a href="https://github.com/bartlomiejmazur" target="_blank" class="home__social-link">
-                <i class="ri-github-line"></i>
-              </a>
-              
-            </ul>
-          </div>
-          <!--========================================== HOME INFO 1=================================================-->
-          <div class="home__info">
-            <div>
-              <h3 class="home__info-title">
-                  BIOGRAPHY
-              </h3>
-              <p class="home__info-description">
-                Passionate about designing beautiful web interfaces. I am self-taught, 
-                previously, I worked as a freelancer
-              </p>
-            </div>
-            <div>
-              <h3 class="home__info-title">
-                CONTACT
-              </h3>
-              <p class="home__info-description">
-                Poland <br>
-                bartłomiejmazur24@gmail.com <br>
-              </p>
-            </div>
-            <div>
-              <h3 class="home__info-title">
-                SERVICES
-              </h3>
-              <p class="home__info-description">
-                Frontend Programing <br>
-                Website Design <br>
-                UI/UX Design <br>
-              </p>
-            </div>
-          </div>
-
-          <!--========================================== HOME INFO 2=================================================-->
-          <div class="home__info">
-            <div>
-              <h3 class="home__info-title">
-                  YEARS OF EXPERIENCE
-              </h3>
-              <p class="home__info-number">
-                1.0
-              </p>
-            </div>
-            <div>
-              <h3 class="home__info-title">
-                COMPLETED PROJECTS
-              </h3>
-              <p class="home__info-number">
-                10+
-              </p>
-            </div>
-            <div>
-              <h3 class="home__info-title">
-                COMPANIED WORKED
-              </h3>
-              <p class="home__info-number">
-                02+
-              </p>
-            </div>
+            </li>
+            <li class="nav__item">
+              <a href="#skills" class="nav__link">
+                <i class="ri-trophy-line"></i>
+                Skills</a
+              >
+            </li>
+            <li class="nav__item">
+              <a href="#qualification" class="nav__link">
+                <i class="ri-book-open-line"></i>
+                Qualification</a
+              >
+            </li>
+            <li class="nav__item">
+              <a href="#services" class="nav__link">
+                <i class="ri-briefcase-line"></i>
+                Services</a
+              >
+            </li>
+            <li class="nav__item">
+              <a href="#projects" class="nav__link">
+                <i class="ri-image-line"></i>
+                Projects</a
+              >
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">
+                <i class="ri-chat-1-line"></i>
+                Contact</a
+              >
+            </li>
+          </ul>
+          <div class="nav__close">
+            <i class="ri-close-line"></i>
           </div>
         </div>
-      </section>
-      <!--========================================== SKILLS =================================================-->
-      <section class="skills section" id="skills">
-        <h2 class="section__title">Skills</h2>
-        <span class="section__subtitle">My favorite skills</span>
+        <div class="nav__buttons">
+          <i class="ri-moon-line change-theme" id="theme-button"></i>
+          <div class="nav__toggle">
+            <i class="ri-menu-line"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="section-wrapper">
+      <div class="first-section"></div>
+      <div class="second-section"></div>
+      <div class="third-section">
+        <!--HOME -->
+        <section class="home" id="home">
+          <div class="home__container container grid section__border">
+            <div class="home__data grid">
+              <h1 class="home__title">
+                Hi, I'm Bartek <br />
+                Frontend Developer <br />
+                Based in Poland
+              </h1>
 
-        <div class="skills__container container grid section__border">
-          <!--========================================== SKILLS 1 =================================================-->
-          <div class="skills__content">
-            <h3 class="skills__title">
-              <i class="ri-braces-line"></i> Frontend Development
-            </h3>
-            <div class="skills__info">
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="./svg/html.svg" alt="skills image">
+              <div class="home__blob grid">
+                <div class="home__profile">
+                  <img src="/img/profile.png" alt="home profile" />
                 </div>
-                <h3 class="skills__name">HTML</h3>
-                <span class="skills__subtitle">Advanced</span>
               </div>
+              <ul class="home__social">
+                <a
+                  href="https://www.linkedin.com/in/bart%C5%82omiej-mazur-bab36523b/"
+                  target="_blank"
+                  class="home__social-link"
+                >
+                  <i class="ri-linkedin-box-line"></i>
+                </a>
+                <a
+                  href="https://github.com/bartlomiejmazur"
+                  target="_blank"
+                  class="home__social-link"
+                >
+                  <i class="ri-github-line"></i>
+                </a>
+              </ul>
+            </div>
+            <!--HOME INFO -->
+            <div class="home__info">
+              <div>
+                <h3 class="home__info-title">BIOGRAPHY</h3>
+                <p class="home__info-description">
+                  Passionate about designing beautiful web interfaces. I am
+                  self-taught, previously, I worked as a freelancer
+                </p>
+              </div>
+              <div>
+                <h3 class="home__info-title">CONTACT</h3>
+                <p class="home__info-description">
+                  Poland <br />
+                  bartłomiejmazur24@gmail.com <br />
+                </p>
+              </div>
+              <div>
+                <h3 class="home__info-title">SERVICES</h3>
+                <p class="home__info-description">
+                  Frontend Programing <br />
+                  Website Design <br />
+                  UI/UX Design <br />
+                </p>
+              </div>
+            </div>
 
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="./svg/css.svg" alt="skills image">
-                </div>
-                <h3 class="skills__name">CSS</h3>
-                <span class="skills__subtitle">Advanced</span>
+            <!--HOME INFO -->
+            <div class="home__info">
+              <div>
+                <h3 class="home__info-title">YEARS OF EXPERIENCE</h3>
+                <p class="home__info-number">1.0</p>
               </div>
-
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="./svg/javascript.svg" alt="skills image">
-                </div>
-                <h3 class="skills__name">JavaScript</h3>
-                <span class="skills__subtitle">Advanced</span>
+              <div>
+                <h3 class="home__info-title">COMPLETED PROJECTS</h3>
+                <p class="home__info-number">10+</p>
               </div>
-
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="./svg/react.svg" alt="skills image">
-                </div>
-                <h3 class="skills__name">React</h3>
-                <span class="skills__subtitle">Basic</span>
+              <div>
+                <h3 class="home__info-title">COMPANIED WORKED</h3>
+                <p class="home__info-number">02+</p>
               </div>
-
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="./svg/typescript.svg" alt="skills image">
-                </div>
-                <h3 class="skills__name">TypeScript</h3>
-                <span class="skills__subtitle">Basic</span>
-              </div>
-
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="./svg/threejs.svg" alt="skills image">
-                </div>
-                <h3 class="skills__name">ThreeJS</h3>
-                <span class="skills__subtitle">Basic</span>
-              </div>
-
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="./svg/git.svg" alt="skills image">
-                </div>
-                <h3 class="skills__name">GIT</h3>
-                <span class="skills__subtitle">Advanced</span>
-              </div>
-              
             </div>
           </div>
-            <!--========================================== SKILLS 2 =================================================-->
-          <div class="skills__content">
-            <h3 class="skills__title">
-              <i class="ri-server-fill"></i> Backend Development
-            </h3>
-        
-            <div class="skills__info">
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="./svg/node.svg" alt="skills image">
-                </div>
-                <h3 class="skills__name">Node</h3>
-                <span class="skills__subtitle">Basic</span>
-              </div>
+        </section>
+        <!-- SKILLS -->
+        <section class="skills section" id="skills">
+          <h2 class="section__title">Skills</h2>
+          <span class="section__subtitle">My favorite skills</span>
 
-              
+          <div class="skills__container container grid section__border">
+            <!-- SKILLS 1 -->
+            <div class="skills__content">
+              <h3 class="skills__title">
+                <i class="ri-braces-line"></i> Frontend Development
+              </h3>
+              <div class="skills__info">
                 <div class="skills__data">
                   <div class="skills__blob">
-                    <img src="./svg/express.svg" alt="skills image">
+                    <img src="./svg/html.svg" alt="skills image" />
+                  </div>
+                  <h3 class="skills__name">HTML</h3>
+                  <span class="skills__subtitle">Advanced</span>
+                </div>
+
+                <div class="skills__data">
+                  <div class="skills__blob">
+                    <img src="./svg/css.svg" alt="skills image" />
+                  </div>
+                  <h3 class="skills__name">CSS</h3>
+                  <span class="skills__subtitle">Advanced</span>
+                </div>
+
+                <div class="skills__data">
+                  <div class="skills__blob">
+                    <img src="./svg/javascript.svg" alt="skills image" />
+                  </div>
+                  <h3 class="skills__name">JavaScript</h3>
+                  <span class="skills__subtitle">Advanced</span>
+                </div>
+
+                <div class="skills__data">
+                  <div class="skills__blob">
+                    <img src="./svg/react.svg" alt="skills image" />
+                  </div>
+                  <h3 class="skills__name">React</h3>
+                  <span class="skills__subtitle">Basic</span>
+                </div>
+
+                <div class="skills__data">
+                  <div class="skills__blob">
+                    <img src="./svg/typescript.svg" alt="skills image" />
+                  </div>
+                  <h3 class="skills__name">TypeScript</h3>
+                  <span class="skills__subtitle">Basic</span>
+                </div>
+
+                <div class="skills__data">
+                  <div class="skills__blob">
+                    <img src="./svg/threejs.svg" alt="skills image" />
+                  </div>
+                  <h3 class="skills__name">ThreeJS</h3>
+                  <span class="skills__subtitle">Basic</span>
+                </div>
+
+                <div class="skills__data">
+                  <div class="skills__blob">
+                    <img src="./svg/git.svg" alt="skills image" />
+                  </div>
+                  <h3 class="skills__name">GIT</h3>
+                  <span class="skills__subtitle">Advanced</span>
+                </div>
+              </div>
+            </div>
+            <!-- SKILLS 2 -->
+            <div class="skills__content">
+              <h3 class="skills__title">
+                <i class="ri-server-fill"></i> Backend Development
+              </h3>
+
+              <div class="skills__info">
+                <div class="skills__data">
+                  <div class="skills__blob">
+                    <img src="./svg/node.svg" alt="skills image" />
+                  </div>
+                  <h3 class="skills__name">Node</h3>
+                  <span class="skills__subtitle">Basic</span>
+                </div>
+
+                <div class="skills__data">
+                  <div class="skills__blob">
+                    <img src="./svg/express.svg" alt="skills image" />
                   </div>
                   <h3 class="skills__name">Express</h3>
                   <span class="skills__subtitle">Basic</span>
                 </div>
-                
-            </div>
-          </div>
-        
-          <!--========================================== SKILLS 3 =================================================-->
-          <div class="skills__content">
-            <h3 class="skills__title">
-              <i class="ri-window-line"></i> Web Designer
-            </h3>
-            <div class="skills__info">
-            
-              <div class="skills__data">
-                <div class="skills__blob">
-                  <img src="./svg/figma.svg" alt="skills image">
-                </div>
-                <h3 class="skills__name">Figma</h3>
-                <span class="skills__subtitle">
-                  Intermediate</span>
               </div>
+            </div>
 
-              
+            <!-- SKILLS 3 -->
+            <div class="skills__content">
+              <h3 class="skills__title">
+                <i class="ri-window-line"></i> Web Designer
+              </h3>
+              <div class="skills__info">
                 <div class="skills__data">
                   <div class="skills__blob">
-                    <img src="./svg/photoshop.svg" alt="skills image">
+                    <img src="./svg/figma.svg" alt="skills image" />
+                  </div>
+                  <h3 class="skills__name">Figma</h3>
+                  <span class="skills__subtitle"> Intermediate</span>
+                </div>
+
+                <div class="skills__data">
+                  <div class="skills__blob">
+                    <img src="./svg/photoshop.svg" alt="skills image" />
                   </div>
                   <h3 class="skills__name">Photoshop</h3>
-                  <span class="skills__subtitle">
-                    Intermediate</span>
+                  <span class="skills__subtitle"> Intermediate</span>
                 </div>
 
-                
-                  <div class="skills__data">
-                    <div class="skills__blob">
-                      <img src="./svg/blender.svg" alt="skills image">
-                    </div>
-                    <h3 class="skills__name">Blender</h3>
-                    <span class="skills__subtitle">
-                      Basic</span>
+                <div class="skills__data">
+                  <div class="skills__blob">
+                    <img src="./svg/blender.svg" alt="skills image" />
                   </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--========================================== QUALIFICATION =================================================-->
-      <section class="qualification section" id="qualification">
-        
-        <h2 class="section__title">Qualification</h2>
-        <span class="section__subtitle">Experience & education</span>
-
-        <div class="qualification__container container grid section__border">
-          <!--========================================== QUALIFICATION 1 =================================================-->
-          <div class="qualification__content">
-            <h3 class="qualification__title">
-              <i class="ri-pencil-ruler-line"></i>Education
-            </h3>
-            <div class="qualification__info">
-              <div>
-                <h3 class="qualification__name">
-                  Computer Engineer
-                </h3>
-                <span class="qualification__country">Rzeszow - University</span>
-                <span class="qualification__year">2018 - 2022</span>
-              </div>
-            </div>
-          </div>
-
-          <!--========================================== QUALIFICATION 2 =================================================-->
-          <div class="qualification__content">
-            <h3 class="qualification__title">
-              <i class="ri-building-line"></i> Work
-            </h3>
-            <div class="qualification__info">
-              <div>
-                <h3 class="qualification__name">
-                  Web developer - freelancer
-                </h3>
-                <span class="qualification__country">B2B - Poland</span>
-                <span class="qualification__year">2021 - 2022</span>
-              </div>
-            </div>
-
-            <div class="qualification__info">
-              <div>
-                <h3 class="qualification__name">
-
-                </h3>
-                <span class="qualification__country"></span>
-                <span class="qualification__year"></span>
-              </div>
-            </div>
-
-            <div class="qualification__info">
-              <div>
-                <h3 class="qualification__name">
-
-                </h3>
-                <span class="qualification__country"></span>
-                <span class="qualification__year"></span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <span class="end-section"><i class="ri-movie-line"></i> To be continued.... </span>
-      </section>
-      
-    </div>
-    <div class="fourth-section">
-      <!--========================================== SERVICES =================================================-->
-      <section class="services section" id="services">
-        
-        <h2 class="section__title">Services</h2>
-        <span class="section__subtitle">What I offer</span>
-
-        <div class="services__container container grid section__border">
-          <div class="services__card">
-            <i class="ri-layout-line"></i>
-
-            <h2 class="services__title">
-              UI/UX <br>
-              Designer
-            </h2>
-
-            <p class="services__description">
-              Service that provides the best quality and at the request of the client, with professional work and customer support.
-            </p>
-
-            <div class="services__border"></div>
-          </div>
-          <div class="services__card">
-            <i class="ri-code-line"></i>
-
-            <h2 class="services__title">
-              Website<br>
-              Design
-            </h2>
-
-            <p class="services__description">
-              Creating websites that are responsive RWD (Responsive Web Design), meaning they are optimized for both mobile devices and computers.
-            </p>
-
-            <div class="services__border"></div>
-          </div>
-          <div class="services__card">
-            <i class="ri-code-line"></i>
-
-            <h2 class="services__title">
-              Frontend<br>
-              Develop
-            </h2>
-
-            <p class="services__description">
-              Creating visually attractive and optimized websites. Using current standards for creating modern websites.
-            </p>
-
-            <div class="services__border"></div>
-          </div>
-        </div>
-      </section>
-      <!--========================================== PROJECTS =================================================-->
-      <section class="projects section" id="projects">
-        <h2 class="section__title">Projects</h2>
-        <span class="section__subtitle">My work</span>
-
-        <div class="container section__border">
-          <div class="projects__container swiper">
-            <div class="swiper-wrapper">
-              <!--========================================== PROJECT 1=======-->
-              <div class="projects__content swiper-slide">
-                <img src="./img/project1.jpg" alt="projects image" class="projects__img">
-                <div>
-                  <span class="projects__subtitle">Web</span>
-                  <h1 class="projects__title">CRUD Aplication</h1>
-                  <a href="https://graceful-basbousa-44242f.netlify.app/" class="projects__button">
-                    View demo <i class="ri-arrow-right-line"></i>
-                  </a>
+                  <h3 class="skills__name">Blender</h3>
+                  <span class="skills__subtitle"> Basic</span>
                 </div>
               </div>
-              <!--========================================== PROJECT 2 ==================-->
-              <div class="projects__content swiper-slide">
-                <img src="./img/project2.jpg" alt="projects image" class="projects__img">
-                <div>
-                  <span class="projects__subtitle">Web</span>
-                  <h1 class="projects__title">Store</h1>
-                  <a href="https://bartlomiejmazur.github.io/shopping_app/" class="projects__button">
-                    View demo <i class="ri-arrow-right-line"></i>
-                  </a>
-                </div>
-              </div>
-              <!--========================================== PROJECT 3 ==================-->
-              <div class="projects__content swiper-slide">
-                <img src="./img/project3.jpg" alt="projects image" class="projects__img">
-                <div>
-                  <span class="projects__subtitle">Web</span>
-                  <h1 class="projects__title">Single Page Aplication</h1>
-                  <a href="https://super-crumble-3353dd.netlify.app/" class="projects__button">
-                    View demo <i class="ri-arrow-right-line"></i>
-                  </a>
-                </div>
-              </div>
-            
-            </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-           
-          </div>
-        </div>
-      </section>
-      <!--========================================== CONTACT =================================================-->
-      <section class="contact section" id="contact">
-        
-        <h2 class="section__title">Contact Me</h2>
-        <span class="section__subtitle">Get in touch</span>
-
-        <div class="contact__container container grid section__border">
-          <div class="contact__content">
-            <h3 class="contact__title">
-              <i class="ri-chat-3-line"></i> Talk to me
-            </h3>
-
-            <div class="contact__info">
-              <div class="contact__data">
-                <span class="contact__data-title">Email</span>
-                <span class="contact__data-info">bartlomiejmazur24@gmail.com</span>
-              </div>
             </div>
           </div>
-          <div class="contact__content">
-            <h3 class="contact__title">
-              <i class="ri-send-plane-line"></i> Write to me
-            </h3>
+        </section>
+        <!-- QUALIFICATION -->
+        <section class="qualification section" id="qualification">
+          <h2 class="section__title">Qualification</h2>
+          <span class="section__subtitle">Experience & education</span>
 
-            <form action="" class="contact__form" id="contact-form">
-              <div class="contact__form-div">
-                <label class="contact__form-tag">Names</label>
-                <input type="text" name="user_name" required placeholder="Write your names" class="contact__form-input" id="contact-name">
+          <div class="qualification__container container grid section__border">
+            <!--QUALIFICATION 1 -->
+            <div class="qualification__content">
+              <h3 class="qualification__title">
+                <i class="ri-pencil-ruler-line"></i>Education
+              </h3>
+              <div class="qualification__info">
+                <div>
+                  <h3 class="qualification__name">Computer Engineer</h3>
+                  <span class="qualification__country"
+                    >Rzeszow - University</span
+                  >
+                  <span class="qualification__year">2018 - 2022</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- QUALIFICATION 2 -->
+            <div class="qualification__content">
+              <h3 class="qualification__title">
+                <i class="ri-building-line"></i> Work
+              </h3>
+              <div class="qualification__info">
+                <div>
+                  <h3 class="qualification__name">
+                    Web developer - freelancer
+                  </h3>
+                  <span class="qualification__country">B2B - Poland</span>
+                  <span class="qualification__year">2021 - 2022</span>
+                </div>
               </div>
 
-              <div class="contact__form-div">
-                <label class="contact__form-tag">Mail</label>
-                <input type="email" name="user_email" required placeholder="Write your email" class="contact__form-input" id="contact-email">
+              <div class="qualification__info">
+                <div>
+                  <h3 class="qualification__name"></h3>
+                  <span class="qualification__country"></span>
+                  <span class="qualification__year"></span>
+                </div>
               </div>
 
-              <div class="contact__form-div contact__form-area">
-                <label class="contact__form-tag">Content</label>
-                <textarea name="user_message" placeholder="Your message" class="contact__form-input" id="contact-content"></textarea>
+              <div class="qualification__info">
+                <div>
+                  <h3 class="qualification__name"></h3>
+                  <span class="qualification__country"></span>
+                  <span class="qualification__year"></span>
+                </div>
               </div>
-
-              <p class="contact__message" id="contact-message"></p>
-
-              <button type="submit" class="contact__button">
-                Submit <i class="ri-arrow-right-up-line"></i>
-              </button>
-            </form>
+            </div>
           </div>
-        </div>
-      </section>
-      <footer class="footer">
-        <div class="footer__container container">
-          <h1 class="footer__title">B.Mazur</h1>
-          <p>Frontend Developer</p>
+          <span class="end-section"
+            ><i class="ri-movie-line"></i> To be continued....
+          </span>
+        </section>
+      </div>
+      <div class="fourth-section">
+        <!--SERVICES -->
+        <section class="services section" id="services">
+          <h2 class="section__title">Services</h2>
+          <span class="section__subtitle">What I offer</span>
 
-          <ul class="footer__list">
-            <li>
-              <a href="#home" class="footer__link">Home</a>
-            </li>
-            <li>
-              <a href="#skills" class="footer__link">Skills</a>
-            </li>
-            <li>
-              <a href="#services" class="footer__link">Services</a>
-            </li>
-          </ul>
+          <div class="services__container container grid section__border">
+            <div class="services__card">
+              <i class="ri-layout-line"></i>
+
+              <h2 class="services__title">
+                UI/UX <br />
+                Designer
+              </h2>
+
+              <p class="services__description">
+                Service that provides the best quality and at the request of the
+                client, with professional work and customer support.
+              </p>
+
+              <div class="services__border"></div>
+            </div>
+            <div class="services__card">
+              <i class="ri-code-line"></i>
+
+              <h2 class="services__title">
+                Website<br />
+                Design
+              </h2>
+
+              <p class="services__description">
+                Creating websites that are responsive RWD (Responsive Web
+                Design), meaning they are optimized for both mobile devices and
+                computers.
+              </p>
+
+              <div class="services__border"></div>
+            </div>
+            <div class="services__card">
+              <i class="ri-code-line"></i>
+
+              <h2 class="services__title">
+                Frontend<br />
+                Develop
+              </h2>
+
+              <p class="services__description">
+                Creating visually attractive and optimized websites. Using
+                current standards for creating modern websites.
+              </p>
+
+              <div class="services__border"></div>
+            </div>
+          </div>
+        </section>
+        <!-- PROJECTS -->
+        <section class="projects section" id="projects">
+          <h2 class="section__title">Projects</h2>
+          <span class="section__subtitle">My work</span>
+
+          <div class="container section__border">
+            <div class="projects__container swiper">
+              <div class="swiper-wrapper">
+                <!--PROJECT 1-->
+                <div class="projects__content swiper-slide">
+                  <img
+                    src="./img/project1.jpg"
+                    alt="projects image"
+                    class="projects__img"
+                  />
+                  <div>
+                    <span class="projects__subtitle">Web</span>
+                    <h1 class="projects__title">CRUD Aplication</h1>
+                    <a
+                      href="https://graceful-basbousa-44242f.netlify.app/"
+                      class="projects__button"
+                    >
+                      View demo <i class="ri-arrow-right-line"></i>
+                    </a>
+                  </div>
+                </div>
+                <!--PROJECT 2 -->
+                <div class="projects__content swiper-slide">
+                  <img
+                    src="./img/project2.jpg"
+                    alt="projects image"
+                    class="projects__img"
+                  />
+                  <div>
+                    <span class="projects__subtitle">Web</span>
+                    <h1 class="projects__title">Store</h1>
+                    <a
+                      href="https://bartlomiejmazur.github.io/shopping_app/"
+                      class="projects__button"
+                    >
+                      View demo <i class="ri-arrow-right-line"></i>
+                    </a>
+                  </div>
+                </div>
+                <!-- PROJECT 3 -->
+                <div class="projects__content swiper-slide">
+                  <img
+                    src="./img/project3.jpg"
+                    alt="projects image"
+                    class="projects__img"
+                  />
+                  <div>
+                    <span class="projects__subtitle">Web</span>
+                    <h1 class="projects__title">Single Page Aplication</h1>
+                    <a
+                      href="https://super-crumble-3353dd.netlify.app/"
+                      class="projects__button"
+                    >
+                      View demo <i class="ri-arrow-right-line"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+        </section>
+        <!-- CONTACT -->
+        <section class="contact section" id="contact">
+          <h2 class="section__title">Contact Me</h2>
+          <span class="section__subtitle">Get in touch</span>
+
+          <div class="contact__container container grid section__border">
+            <div class="contact__content">
+              <h3 class="contact__title">
+                <i class="ri-chat-3-line"></i> Talk to me
+              </h3>
+
+              <div class="contact__info">
+                <div class="contact__data">
+                  <span class="contact__data-title">Email</span>
+                  <span class="contact__data-info"
+                    >bartlomiejmazur24@gmail.com</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="contact__content">
+              <h3 class="contact__title">
+                <i class="ri-send-plane-line"></i> Write to me
+              </h3>
+
+              <form action="" class="contact__form" id="contact-form">
+                <div class="contact__form-div">
+                  <label class="contact__form-tag">Names</label>
+                  <input
+                    type="text"
+                    name="user_name"
+                    required
+                    placeholder="Write your names"
+                    class="contact__form-input"
+                    id="contact-name"
+                  />
+                </div>
+
+                <div class="contact__form-div">
+                  <label class="contact__form-tag">Mail</label>
+                  <input
+                    type="email"
+                    name="user_email"
+                    required
+                    placeholder="Write your email"
+                    class="contact__form-input"
+                    id="contact-email"
+                  />
+                </div>
+
+                <div class="contact__form-div contact__form-area">
+                  <label class="contact__form-tag">Content</label>
+                  <textarea
+                    name="user_message"
+                    placeholder="Your message"
+                    class="contact__form-input"
+                    id="contact-content"
+                  ></textarea>
+                </div>
+
+                <p class="contact__message" id="contact-message"></p>
+
+                <button type="submit" class="contact__button">
+                  Submit <i class="ri-arrow-right-up-line"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+        <footer class="footer">
+          <div class="footer__container container">
+            <h1 class="footer__title">B.Mazur</h1>
+            <p>Frontend Developer</p>
+
+            <ul class="footer__list">
+              <li>
+                <a href="#home" class="footer__link">Home</a>
+              </li>
+              <li>
+                <a href="#skills" class="footer__link">Skills</a>
+              </li>
+              <li>
+                <a href="#services" class="footer__link">Services</a>
+              </li>
+            </ul>
 
             <ul class="footer__social">
-              <a href="https://www.linkedin.com/in/bart%C5%82omiej-mazur-bab36523b/" target="_blank" class="footer__social-link">
+              <a
+                href="https://www.linkedin.com/in/bart%C5%82omiej-mazur-bab36523b/"
+                target="_blank"
+                class="footer__social-link"
+              >
                 <i class="ri-linkedin-box-line"></i>
               </a>
-              <a href="https://github.com/bartlomiejmazur" target="_blank" class="footer__social-link">
+              <a
+                href="https://github.com/bartlomiejmazur"
+                target="_blank"
+                class="footer__social-link"
+              >
                 <i class="ri-github-line"></i>
               </a>
-              <a  target="_blank" class="footer__social-link">
+              <a target="_blank" class="footer__social-link">
                 <i class="ri-facebook-line"></i>
               </a>
             </ul>
@@ -541,51 +575,55 @@
             <span class="footer__copy">
               &#169; Copyright B.Mazur. All right reserved
             </span>
-        </div>
-      </footer>
-    
-    </div>
-    <a href="#home" class="scrollup" id="scroll-up"><i class="ri-arrow-up-line"></i></a>
-    
-    <div class="fifth-section">
-      <div class="rate__container">
-        <button class="rate__container-close"><i class="ri-close-circle-line"></i></button>
-        <div class="rate__widget">
-          <div class="stars">
-          <input type="radio" name="rate" class="star" id="rate-1">
-          <label for="rate-5" class="ri-star-fill"></label>
-          <input type="radio" name="rate" class="star" id="rate-2">
-          <label for="rate-4" class="ri-star-fill"></label>
-          <input type="radio" name="rate" class="star" id="rate-3">
-          <label for="rate-3" class="ri-star-fill"></label>
-          <input type="radio" name="rate" class="star" id="rate-4">
-          <label for="rate-2" class="ri-star-fill"></label>
-          <input type="radio" name="rate" class="star" id="rate-5">
-          <label for="rate-1" class="ri-star-fill"></label>
-        </div>
-          <form action="#" id="rate-form">
-        
-          <p></p>
-          <div class="textarea">
-            <textarea name="rate_description" id="" cols="30" placeholder="Descripe your experiance"></textarea>
           </div>
-          <button type="submit" class="rate__btn">Rate</button>
-        </form>
-          
+        </footer>
+      </div>
+      <a href="#home" class="scrollup" id="scroll-up"
+        ><i class="ri-arrow-up-line"></i
+      ></a>
+
+      <div class="fifth-section">
+        <div class="rate__container">
+          <button class="rate__container-close">
+            <i class="ri-close-circle-line"></i>
+          </button>
+          <div class="rate__widget">
+            <div class="stars">
+              <input type="radio" name="rate" class="star" id="rate-1" />
+              <label for="rate-5" class="ri-star-fill"></label>
+              <input type="radio" name="rate" class="star" id="rate-2" />
+              <label for="rate-4" class="ri-star-fill"></label>
+              <input type="radio" name="rate" class="star" id="rate-3" />
+              <label for="rate-3" class="ri-star-fill"></label>
+              <input type="radio" name="rate" class="star" id="rate-4" />
+              <label for="rate-2" class="ri-star-fill"></label>
+              <input type="radio" name="rate" class="star" id="rate-5" />
+              <label for="rate-1" class="ri-star-fill"></label>
+            </div>
+            <form action="#" id="rate-form">
+              <p></p>
+              <div class="textarea">
+                <textarea
+                  name="rate_description"
+                  id=""
+                  cols="30"
+                  placeholder="Descripe your experiance"
+                ></textarea>
+              </div>
+              <button type="submit" class="rate__btn">Rate</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="preloader">
-    <div class="preloader__center">
-      <div class="preloader__ring"></div>
-    <span class="preloader__text">loading..</span>
-    <h1 class="preloader__logo">BM</h1>
-    
-  </div>
-  
-<!--======================= MAIN ========================-->
-  <script type="module" src="/main.js"></script>
-</body>
-
+    <div class="preloader">
+      <div class="preloader__center">
+        <div class="preloader__ring"></div>
+        <span class="preloader__text">loading..</span>
+        <h1 class="preloader__logo">BM</h1>
+      </div>
+    </div>
+    <!--MAIN -->
+    <script type="module" src="/main.js"></script>
+  </body>
 </html>

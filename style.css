@@ -175,6 +175,45 @@ body.dark-theme {
   overflow-x: hidden;
 }
 
+.scroll-tip {
+  visibility: visible;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  padding: 15px;
+  position: fixed;
+  font-size: 3rem;
+  background-color: --;
+  font-family: var(--body-font);
+  color: var(--container-color);
+  top: 50%;
+  left: 50%;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  animation: scroll 2s infinite;
+}
+
+.scroll-tip i {
+  font-size: 3rem;
+}
+
+.scroll-tip p {
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@keyframes scroll {
+  0% {
+    top: 45%;
+  }
+  50% {
+    top: 50%;
+  }
+  100% {
+    top: 45%;
+  }
+}
 /* Wrapper of all sections -------------------------------------*/
 .section-wrapper {
   position: absolute;
@@ -225,7 +264,7 @@ body.dark-theme {
   position: fixed;
   height: 100%;
   width: 100%;
-  z-index: 100;
+  z-index: 10000;
   background-color: #111;
 }
 .preloader__center {

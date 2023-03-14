@@ -147,7 +147,7 @@ export default class Controls {
             trigger: ".third-section",
             // markers: true,
             start: "top top+=200px",
-            end: "bottom bottom",
+            end: "bottom bottom-=400px",
 
             onEnter: () => {
               GSAP.to(this.position, {
@@ -274,11 +274,9 @@ export default class Controls {
                 z: 1.261499132945434,
               });
               this.pendulumTL.resume();
-              // setTimeout(() => {
-              //   GSAP.to(".fifth-section", {
-              //     autoAlpha: 1,
-              //   });
-              // }, 1000);
+              GSAP.to(".end", {
+                autoAlpha: 1,
+              });
             },
             onLeaveBack: () => {
               GSAP.to(this.position, {
@@ -287,9 +285,9 @@ export default class Controls {
                 z: 0.6819227739366736,
               });
               this.pendulumTL.pause();
-              // GSAP.to(".fifth-section", {
-              //   autoAlpha: 0,
-              // });
+              GSAP.to(".end", {
+                autoAlpha: 0,
+              });
             },
           },
         });
@@ -515,6 +513,10 @@ export default class Controls {
                 z: 1.261499132945434,
               });
               this.pendulumTL.resume();
+
+              GSAP.to(".end", {
+                autoAlpha: 1,
+              });
               // setTimeout(() => {
               //   GSAP.to(".fifth-section", {
               //     autoAlpha: 1,
@@ -528,6 +530,9 @@ export default class Controls {
                 z: 3.430882777175016,
               });
               this.pendulumTL.pause();
+              GSAP.to(".end", {
+                autoAlpha: 0,
+              });
             },
           },
         });
